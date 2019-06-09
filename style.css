@@ -1,0 +1,58 @@
+
+body {
+    background-image: url(train-background.jpeg);
+    background-image: no-repeat center center fixed; 
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;  
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.jumbotron {
+    background-color: black;
+    border: dashed yellow 3px;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: normal;
+    color: yellow!important;
+}
+
+.card-header {
+    background-color: black;
+    color: yellow !important    ;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+.card {
+    border: 2px black solid;
+    opacity: .95;
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+button {
+    background-color: black  !important;
+    color: yellow !important;
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+
+
+thead {
+    color: white;
+    background-color: black;    
+}
+thead:hover {
+    background-color: black;
+    color: white;
+}
+
+tr:hover {
+    background-color: lightskyblue;
+    color: white;
+    font-size: 24px;
+    
+}

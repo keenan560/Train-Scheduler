@@ -25,6 +25,17 @@ $(document).on("click", "#submit", function (event) {
     var trainName = $("#train").val().trim();
     var destiny = $("#destination").val().trim();
     var firstTrain = $("#first").val().trim();
+    function validate(firstTrain) {
+        if (firstTrain.length > 5) {
+            alert("Not a valid entry. Please enter in military time (HH:mm)");
+            $("#first").html("");
+        } else if (firstTrain.indexOf(":") === -1) {
+            alert("Not a valid entry. Please enter in military time (HH:mm)");
+            $("#first").html("");
+
+        }
+    }
+    validate(firstTrain);
     var frequency = $("#frequency").val().trim();
 
 

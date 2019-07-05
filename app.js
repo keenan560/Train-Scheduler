@@ -17,25 +17,23 @@ var database = firebase.database();
 // Train whistle mp3
 var whistle = new Audio("salamisound-2271961-steam-locomotive-whistle.mp3");
 
-
+// Code to validate First Train Time input
+function validate(first) {
+    if (first.length !== 5 || first.indexOf(":") === -1) {
+        first = "";
+        alert("Please enter the correct format HH:mm");
+    } else {
+        return first;
+    }
+}
 // Code to add input to fire base
 $(document).on("click", "#submit", function (event) {
+
     event.preventDefault();
     whistle.play();
     var trainName = $("#train").val().trim();
     var destiny = $("#destination").val().trim();
-    var firstTrain = $("#first").val().trim();
-    function validate(firstTrain) {
-        if (firstTrain.length > 5) {
-            alert("Not a valid entry. Please enter in military time (HH:mm)");
-            $("#first").html("");
-        } else if (firstTrain.indexOf(":") === -1) {
-            alert("Not a valid entry. Please enter in military time (HH:mm)");
-            $("#first").html("");
-
-        }
-    }
-    validate(firstTrain);
+    var firstTrain = validate($("#first").val().trim());
     var frequency = $("#frequency").val().trim();
 
 
@@ -76,10 +74,6 @@ $(document).on("click", "#submit", function (event) {
         
         var nextTrain = firstT;
       
-        while (nextTrain <= moment()) {
-           nexttrain =  moment(nextTrain).add(freq, "m").format("mm");
-        
-        }
 
         var newTrainRow = $("<tr>").append(
             $("<td>").text(name),
@@ -89,7 +83,7 @@ $(document).on("click", "#submit", function (event) {
             $("<td>").text(freq)
         )
         
-        $("marquee").append(dest + " " + moment(freq).format("mm")  + " ");
+        $("marquee").append(dest + " " + firstT + " ");
         $("tbody").append(newTrainRow);
 
     });
